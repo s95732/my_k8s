@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: myjenkins-svc
   labels:
-     app: myjenkins-pod
+     app: myjekins-pod
 spec:
   type: NodePort
   ports:
   - port: 8080
-    nodeport: 30001
+    nodePort: 30001
     protocol: TCP
-  Selector:
-      app: myjenkins-pod
+  selector:
+      app: myjekins-pod
