@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myjenkins-rc          
+spec:
+   replicas: 3
+   selector: 
+     app: myjenkins-pod
+     version: 2.7.2
+   template:
+     metadata:
+       labels:
+          app: myjenkins-pod
+          version: 2.7.2
+     spec:
+        containers:
+        - name: myjenkins-rc     
+          image: jenkins:2.60.3
+          ports:
+          - containerPort: 8080  
