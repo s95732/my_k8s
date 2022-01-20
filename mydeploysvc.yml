@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-svc
+  name: myonlineapp-svc
   labels:
-     app: nginx
+     app: myjavaapp
 spec:
   type: NodePort
   ports:
@@ -11,5 +11,5 @@ spec:
     nodePort: 30001
     protocol: TCP
   selector:
-      app: nginx
+      app: myjavaapp
  
