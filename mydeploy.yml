@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: myonlineapp-deploy
+ name:nginx-deploy
  labels:
-   app: myonlineapp
+   app: nginx
 spec:
   replicas: 3
   selector:
     matchLabels:
-        app: myonlineapp
+        app: nginx
   template:
     metadata:
        labels:
-        app: myonlineapp
+        app: nginx
     spec:
       containers:
-      - name: myonlineapp-container
-        image: maha4iac/myonlineapp:2
+      - name: nginx-container
+        image: nginx
         ports:
         - containerPort: 8080
